@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, Filter, Activity, Sparkles, X } from "lucide-react";
 import { machinesList } from "../data/mockData";
@@ -12,7 +12,6 @@ export default function MachineMonitoring() {
   const [zoneFilter, setZoneFilter] = useState("All");
   const [selectedMachine, setSelectedMachine] = useState(null);
 
-  // Filter machines dynamically using React state
   const filteredMachines = machinesList.filter((machine) => {
     const matchesSearch =
       machine.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -24,7 +23,6 @@ export default function MachineMonitoring() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <div>
           <h1 className="text-2xl font-bold text-primary">Machine Monitoring</h1>
@@ -37,9 +35,7 @@ export default function MachineMonitoring() {
         </span>
       </div>
 
-      {/* Search & Filter Bar */}
       <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-4">
-        {/* Search Input */}
         <div className="relative flex-1">
           <Search size={18} className="absolute left-3 top-2.5 text-gray-400" />
           <input
@@ -51,7 +47,6 @@ export default function MachineMonitoring() {
           />
         </div>
 
-        {/* Status Filter */}
         <div className="flex items-center gap-2">
           <Filter size={16} className="text-gray-400" />
           <select
@@ -66,7 +61,6 @@ export default function MachineMonitoring() {
           </select>
         </div>
 
-        {/* Zone Filter */}
         <div>
           <select
             value={zoneFilter}
@@ -81,7 +75,6 @@ export default function MachineMonitoring() {
         </div>
       </div>
 
-      {/* Machine Cards Grid */}
       {filteredMachines.length === 0 ? (
         <div className="bg-white p-10 rounded-xl text-center text-gray-500 border border-dashed border-gray-300">
           No machines match your current search or filter criteria.
@@ -98,7 +91,6 @@ export default function MachineMonitoring() {
         </div>
       )}
 
-      {/* Selected Machine Inspection Panel */}
       {selectedMachine && (
         <div className="bg-white border-2 border-blue-500 rounded-xl p-6 shadow-lg space-y-4">
           <div className="flex justify-between items-start">
