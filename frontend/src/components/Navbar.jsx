@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
 
-    <header className="bg-white shadow-sm px-8 py-5 flex justify-between items-center">
+    <header className="bg-white shadow-sm px-8 py-5 flex justify-between items-center sticky">
 
       <div>
 
